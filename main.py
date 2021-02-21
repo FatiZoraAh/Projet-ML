@@ -6,7 +6,7 @@ import csv
 html =requests.get('https://www.hespress.com/')
 soup=BeautifulSoup(html.text,"lxml")
 h2=soup.find_all('h2',{'data-layout':'story'})
-mcsv=open('links.json','w')
+mcsv=open('links.csv','w')
 fieldnames=['LINKTEXT','FILELINK']
 writer=csv.DictWriter(mcsv,fieldnames=fieldnames)
 writer.writeheader()

@@ -6,17 +6,18 @@ from string import punctuation
 # Categories
 categories_dict = {
 
-    'society': 4,
+    'society': 4
+
 
 }
 
 ### Tools
-## Farasa Arabic NLP Toolkit
+## DaWN english NLP Toolkit
 # Tokenizer
-farasaSegmenter = 'Tools/farasa/segmenter'
+farasaSegmenter = 'Tools/DAWN/segmenter'
 
 ## Arabic StopWords List
-stopWords = open("Tools/arabic-stop-words/list.txt").read().splitlines()
+stopWords = open("Tools/englishstop-words/list.txt").read().splitlines()
 
 ## Models directory
 models = 'Models/dumps/'
@@ -71,7 +72,7 @@ class Helper():
 
     # Get stemmed content 
     def getLemmaArticle(self, content):
-        jarFarasaSegmenter = os.path.join(farasaSegmenter, 'FarasaSegmenterJar.jar')
+        jarFarasaSegmenter = os.path.join(farasaSegmenter, 'DAWNSegmenterJar.jar')
         tmp = os.path.join(farasaSegmenter, 'tmp')
         if os.path.exists(tmp):
             os.system('rm ' + tmp)
@@ -110,7 +111,6 @@ class Helper():
 
 if __name__ == '__main__':
     help = Helper()
-    content = 'أمرت السلطات القطرية الأسواق والمراكز التجارية في البلاد برفع وإزالة السلع الواردة من السعودية ' \
-              'والبحرين والإمارات ومصر في الذكرى الأولى لإعلان هذه الدول الحصار عليها. '
+    content ='BITCOIN'
     category = help.predict(content)
     print(category)
