@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
-html =requests.get('https://www.dawn.com/')
+html =requests.get('https://www.hespress.com/')
 soup=BeautifulSoup(html.text,"lxml")
 h2=soup.find_all('h2',{'data-layout':'story'})
 mcsv=open('links.json','w')
